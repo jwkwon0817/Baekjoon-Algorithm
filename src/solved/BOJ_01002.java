@@ -7,7 +7,6 @@
 package solved;
 
 import java.io.*;
-import java.util.HashSet;
 
 public class BOJ_01002 {
     public static void main(String[] args) throws IOException {
@@ -17,7 +16,6 @@ public class BOJ_01002 {
         int N = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < N; i++) {
-            HashSet<Double> set = new HashSet<>();
             String[] str = br.readLine().split(" ");
             int x1 = Integer.parseInt(str[0]);
             int y1 = Integer.parseInt(str[1]);
