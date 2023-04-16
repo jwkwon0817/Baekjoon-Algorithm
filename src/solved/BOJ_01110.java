@@ -19,8 +19,7 @@ public class BOJ_01110 {
         int i = 0;
 
         int judge = firstNum;
-        // 2
-        // 6
+
         do {
             firstNum = ((firstNum % 10) * 10) + (((firstNum / 10) + (firstNum % 10)) % 10);
             i++;

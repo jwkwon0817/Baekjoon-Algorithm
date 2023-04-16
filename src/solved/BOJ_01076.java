@@ -1,4 +1,10 @@
-package unsolved;
+/**
+ * @author jwkwon
+ * @since 2023 / 04 / 01
+ * @see https://www.acmicpc.net/problem/1076
+ */
+
+package solved;
 
 import java.io.*;
 import java.util.HashMap;
