@@ -3,32 +3,37 @@ package unsolved;
 import java.io.*;
 import java.util.Arrays;
 
-public class BOJ_03273 {
+public class BOJ_02470 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		int N = Integer.parseInt(br.readLine());
 		int[] array = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-		int x = Integer.parseInt(br.readLine());
-		
-		int count = 0;
 		
 		Arrays.sort(array);
 		
-		for (int i = 0; i < array.length; i++) {
-			for (int j = i + 1; j < array.length; j++) {
-				int sum = array[i] + array[j];
+		int[] best = {array[0], array[1]};
+		
+		for (int i = 0; i < N; i++) {
+			for (int j = i + 1; j < N; j++) {
+				int current = d(new int[]{array[i], array[j]});
 				
-				if (sum == x) {
-					count++;
-				} else if (sum > x) {
+				if (current > d(best)) {
 					break;
+				} else if (current < d(best)) {
+					best = new int[] {array[i], array[j]};
 				}
 			}
 		}
 		
-		bw.write(count + "");
+		for (int i : best) {
+			bw.write(i + " ");
+		}
 		bw.close();
+	}
+	
+	public static int d(int[] array) {
+		return Math.abs(array[0] + array[1]);
 	}
 }

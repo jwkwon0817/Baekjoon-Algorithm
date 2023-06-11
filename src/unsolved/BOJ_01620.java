@@ -1,9 +1,7 @@
 package unsolved;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class BOJ_01620 {
 	public static void main(String[] args) throws IOException {
@@ -12,11 +10,11 @@ public class BOJ_01620 {
 		
 		int[] input = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 		
-		Map<Integer, String> poketmons = new HashMap<>();
+		List<String> poketmons = new ArrayList<>();
 		
 		for (int i = 0; i < input[0]; i++) {
 			String inputStr = br.readLine();
-			poketmons.put(i, inputStr);
+			poketmons.add(inputStr);
 		}
 		
 		for (int i = 0; i < input[1]; i++) {
